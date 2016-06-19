@@ -26,7 +26,7 @@ public class home{
     public void test() {
         driver.get("http://www.google.com");
 
-        driver.findElement(By.name("q")).sendKeys("firefly", Keys.ENTER);
+        driver.findElement(By.name("q")).sendKeys("firefly11", Keys.ENTER);
 
 //        new WebDriverWait(driver,15).until(titleContains("Google Search"));
 
