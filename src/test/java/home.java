@@ -31,7 +31,7 @@ public class home{
         System.setProperty("webdriver.chrome.driver","C:\\dev\\drivers\\chromedriver.exe");
         WebDriver driver=new ChromeDriver();
         driver.get("http://www.yahoo.com");
-        driver.close();
+        driver.quit();
 
     }
 }
