@@ -28,7 +28,7 @@ public class home{
 
     @Test
     public void test() {
-        System.setProperty("webdriver.chrome.driver","C:\\dev\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\dev\\drivers\\chromedriver.exe");
         WebDriver driver=new ChromeDriver();
         driver.get("http://www.yahoo.com");
         driver.close();
