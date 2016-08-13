@@ -23,14 +23,14 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.titleContains;
 @RunWith(SerenityRunner.class)
 public class home{
 
-//    @Managed
+//    @Managed(driver="chrome")
 //    WebDriver driver;
 
     @Test
     public void test() {
         System.setProperty("webdriver.chrome.driver","C:\\dev\\drivers\\chromedriver.exe");
         WebDriver driver=new ChromeDriver();
-        driver.get("http://www.yahoo.com");
+        driver.get("https://www.google.com");
         driver.quit();
 
     }
