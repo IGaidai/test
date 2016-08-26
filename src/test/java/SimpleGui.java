@@ -1,13 +1,13 @@
-import com.sun.prism.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Graphics;
 import java.awt.event.*;
 
-public class SimpleGui extends JFrame implements ActionListener {
+public class SimpleGui extends JFrame{
     JFrame frame;
-    JButton button;
+    JButton colorButton;
+    JButton labelButton;
+    JLabel label;
 
     public static void main(String[] args) {
         SimpleGui gui = new SimpleGui();
@@ -16,25 +16,24 @@ public class SimpleGui extends JFrame implements ActionListener {
 
     public void go() {
         frame = new JFrame();
-        button = new JButton("Change colors");
 
-        button.addActionListener(this);
+        colorButton = new JButton("Change colors");
+        colorButton.addActionListener(new ColorButtonListener());
+        frame.getContentPane().add(BorderLayout.SOUTH, colorButton);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        frame.getContentPane().add(BorderLayout.SOUTH, button);
+        labelButton = new JButton("Change label");
+        labelButton.addActionListener(new LabelButtonListener());
+        frame.getContentPane().add(BorderLayout.EAST, labelButton);
 
         Component component = new Component();
-
         frame.getContentPane().add(BorderLayout.CENTER, component);
 
+        label =new JLabel("I am label");
+        frame.getContentPane().add(BorderLayout.WEST, label);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
-
         frame.setVisible(true);
-    }
-
-    public void actionPerformed(ActionEvent actionEvent) {
-        frame.repaint();
     }
 
     public class Component extends JPanel {
@@ -55,6 +54,18 @@ public class SimpleGui extends JFrame implements ActionListener {
             GradientPaint gradient = new GradientPaint(70, 70, startColor, 150, 150, endColor);
             g2d.setPaint(gradient);
             g2d.fillOval(70, 70, 100, 100);
+        }
+    }
+
+    public class ColorButtonListener implements ActionListener{
+        public void actionPerformed(ActionEvent actionEvent) {
+            frame.repaint();
+        }
+    }
+
+    public class LabelButtonListener implements ActionListener{
+        public void actionPerformed(ActionEvent actionEvent) {
+            label.setText("Wild fish");
         }
     }
 }

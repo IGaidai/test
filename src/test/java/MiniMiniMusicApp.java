@@ -52,12 +52,4 @@ public class MiniMiniMusicApp {
             ex.printStackTrace();
         }
     }
-
-    private void  paintComponent(Graphics g){
-        Image image = new ImageIcon("").getImage();
-        g.drawImage(image, 3,4, (ImageObserver) this);
-
-    }
-
-
 }
