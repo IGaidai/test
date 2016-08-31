@@ -1,6 +1,6 @@
 package MusicWithAnimation;
 
-import javax.sound.midi.*;
+import javax.sound.midi.*; 
 import javax.swing.*;
 import java.awt.*;
 

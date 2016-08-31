@@ -34,4 +34,12 @@ public class home{
         driver.quit();
 
     }
+
+    @Test
+    public void test2(){
+        String marioDriverLocation="C:\\dev\\drivers\\wires.exe";
+        System.setProperty("webdriver.gecko.driver",marioDriverLocation);
+        DesiredCapabilities cap=DesiredCapabilities.firefox();
+        WebDriver driver=new FirefoxDriver(cap);
+    }
 }
