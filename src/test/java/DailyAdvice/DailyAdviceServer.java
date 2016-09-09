@@ -23,7 +23,7 @@ public class DailyAdviceServer {
                 String advice = getAdvice();
                 writer.write(advice);
                 writer.close();
-//                System.out.println(advice);
+                System.out.println(advice);
             }
         } catch (IOException e) {
             e.printStackTrace();
