@@ -38,6 +38,8 @@ public class SimpleChatClientA {
     private void setUpNetworking() {
         try {
             sock = new Socket("127.0.0.1", 5000);
+            writer = new PrintWriter(sock.getOutputStream());
+            System.out.println("Connection established");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,6 +49,15 @@ public class SimpleChatClientA {
     private class SendButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
+            try {
+                writer.println(outgoing.getText());
+                writer.flush();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            outgoing.setText("");
+            outgoing.requestFocus();
         }
+
     }
 }
