@@ -30,7 +30,7 @@ public class SimpleChatClientA {
         incoming = new JTextArea(15, 50);
         incoming.setLineWrap(true);
         incoming.setWrapStyleWord(true);
-        incoming.setEnabled(false);
+        incoming.setEditable(false);
         JScrollPane qScroller = new JScrollPane(incoming);
         qScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         qScroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -49,7 +49,7 @@ public class SimpleChatClientA {
         readerThread.start();
 
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.setSize(400, 500);
+        frame.setSize(650, 500);
         frame.setVisible(true);
     }
 
